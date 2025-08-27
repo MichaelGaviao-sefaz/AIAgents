@@ -1,9 +1,10 @@
 {
-  "schema": "https://schema.botframework.com/schemas/skills/skill-manifest-2.1.0.json",
+  "$schema": "https://schema.botframework.com/schemas/skills/skill-manifest-2.1.0.json",
+  "id": "busca-editais-skill",
   "name": "busca_editais",
-  "description": "Busca editais públicos e privados para startups",
-  "publisherName": "Diná Consultoria e Treinamentos",
   "version": "1.0",
+  "description": "Skill para buscar editais públicos e privados para startups.",
+  "publisherName": "Diná Consultoria e Treinamentos",
   "authorization": {
     "type": "None"
   },
@@ -11,9 +12,24 @@
     {
       "name": "search",
       "protocol": "https",
-      "description": "Realiza pesquisas na web em sites de órgãos públicos e bases de dados de editais.",
       "endpointUrl": "https://api.seuservico.com/search_editais",
       "msAppId": ""
+    }
+  ],
+  "activities": [
+    {
+      "type": "message",
+      "name": "SearchEditais",
+      "description": "Permite buscar editais na web"
+    }
+  ],
+  "dialogs": [],
+  "commands": [
+    {
+      "id": "search_editais_command",
+      "name": "Pesquisar Editais",
+      "description": "Executa uma pesquisa de editais disponíveis",
+      "type": "skill"
     }
   ]
 }
